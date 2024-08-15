@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/Montserrat.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SFPRODISPLAYBOLD';
+    src: url('/fonts/SFPRODISPLAYBOLD.OTF') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+ul {
+    margin-bottom: 15px;
+}
+
+@media (min-width: 640px) {
+    .content-body {
+    }
+}
+
+.content-body {
+
+}
+
+.title-header {
+    font-family: 'SFPRODISPLAYBOLD';
+}

@@ -1,0 +1,19 @@
+{
+    "greeting": "Helo",
+    "header": {
+        
+    },
+    "footer": {
+        "copyright": "All Rights Reserved.",
+        "about": "About",
+        "contact": "Contact",
+        "logoAlt": "{{appName}} Logo"
+    },
+    "article": {
+        "publishedOn": "Published at {{publishDate}}"
+    },
+    "pagination": {
+        "previous": "Previous",
+        "next": "Next"
+    }
+}

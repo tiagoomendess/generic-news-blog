@@ -1,0 +1,26 @@
+{
+    "greeting": "Olá",
+    "header": {
+        
+    },
+    "footer": {
+        "copyright": "Todos os Direitos Reservados.",
+        "about": "Sobre",
+        "contact": "Contacto",
+        "logoAlt": "{{appName}} Logo"
+    },
+    "article": {
+        "publishedOn": "Publicado a {{publishDate}}"
+    },
+    "pagination": {
+        "previous": "Anterior",
+        "next": "Seguinte"
+    },
+    "search": {
+        "title": "Procura por um Artigo",
+        "placeholder": "Escreva algo..."
+    },
+    "categoryFilter": {
+        "title": "Filtrar por Categoria"
+    }
+}
