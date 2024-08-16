@@ -23,10 +23,10 @@
 
 <article class="">
     <section>
-        <div class="category mb-4 font-semibold text-gray-500 text-md">
+        <div class="category mb-2 font-semibold text-gray-500 text-md">
             <a href="/?category={article.category.id}">{article.category.name}</a>
         </div>
-        <Heading tag="h2" class="mb-4 text-gray-700 tracking-tight title-header font-black text-4xl">{article.title}</Heading>
+        <Heading tag="h2" class="mb-2 text-gray-700 tracking-tight title-header font-black text-4xl">{article.title}</Heading>
         <time class="text-gray-500 text-sm" datetime="{publishISODate}">{$t('article.publishedOn', {publishDate: publishDate})}</time>
         <Img class="my-5 rounded-lg aspect-video w-full" src={article.picture.formats.large.url}/>
         <p class="description mb-8 text-gray-950 font-bold text-xl">{article.metaDescription}</p>

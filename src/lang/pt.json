@@ -1,7 +1,10 @@
 {
     "greeting": "Olá",
+    "actions": {
+        "clear": "Limpar",
+        "filter": "Filtrar"
+    },
     "header": {
-        
     },
     "footer": {
         "copyright": "Todos os Direitos Reservados.",
@@ -17,8 +20,9 @@
         "next": "Seguinte"
     },
     "search": {
-        "title": "Procura por um Artigo",
+        "title": "Procure por um Artigo",
         "placeholder": "Escreva algo..."
+
     },
     "categoryFilter": {
         "title": "Filtrar por Categoria"

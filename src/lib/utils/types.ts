@@ -47,3 +47,8 @@ export interface ApiEntity<T> {
     id: number;
     attributes: T;
 }
+
+export interface Category {
+    id: number;
+    name: string;
+}
