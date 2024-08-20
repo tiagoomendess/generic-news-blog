@@ -22,7 +22,7 @@
 
 <div>
     <p class="mb-1 mt-2 text-gray-500 dark:text-gray-200">{$t('categoryFilter.title')}</p>
-	<div class="divider bg-gray-500 dark:bg-gray-200"></div>
+	<div class="divider bg-gray-400 dark:bg-gray-200"></div>
 	{#each categories as category}
 		<Button
 			on:click={() => categoryClicked(category.id)}

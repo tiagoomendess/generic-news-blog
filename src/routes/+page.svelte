@@ -16,6 +16,7 @@
 	import settingsStore from '$lib/stores/settings';
 	import { type Settings } from '$lib/utils/types';
 	import { fetchSettings } from '$lib/stores/settings';
+	import { config } from '$lib/config';
 
 	export let data: PageData;
 
@@ -137,6 +138,10 @@
 	};
 </script>
 
+<svelte:head>
+	<title>{$settingsStore.SiteName || config.appName }</title>
+</svelte:head>
+
 <PageContent>
 	<div class="grid grid-cols-3 gap-4">
 		<div class="block md:hidden col-span-3 mb-4">
@@ -163,7 +168,7 @@
 			<Pagination pagination={data.pagination} bind:currentPage={page} />
 		</div>
 		<div class="hidden md:block md:col-span-1">
-			<div class="sticky top-4">
+			<div class="sticky top-10">
 				<SearchBar bind:value={searchValue} />
 				<CategoryFilter
 					categories={data.categories.map((cat) => ({ id: cat.id, name: cat.attributes.name }))}

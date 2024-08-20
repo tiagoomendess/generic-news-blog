@@ -2,7 +2,13 @@
     "greeting": "Olá",
     "actions": {
         "clear": "Limpar",
-        "filter": "Filtrar"
+        "filter": "Filtrar",
+        "readSimilarArticles": "Outros Artigos Similares",
+        "goToStart": "Ir para o Início"
+    },
+    "general": {
+        "pageNotFound": "Página não encontrada",
+        "pageNotFoundDescription": "A página que está a tentar aceder não existe. Por favor, volte ao inicio onde poderá pesquisar pela página que procura."
     },
     "header": {
     },

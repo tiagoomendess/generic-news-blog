@@ -1,17 +1,19 @@
 <script lang="ts">
 	import settingsStore from '$lib/stores/settings';
 	import { DarkMode } from 'flowbite-svelte';
-    import BackButton from './BackButton.svelte';
+	import BackButton from './BackButton.svelte';
 </script>
 
 <div class="flex justify-center px-4">
 	<div class="w-full md:w-3/4 lg:w-2/4">
 		<div class="grid grid-cols-12 gap-2">
 			<div class="col-span-3">
-                <BackButton/>
-            </div>
+				<BackButton />
+			</div>
 			<div class="col-span-6 text-center flex justify-center">
-				<img class="logo p-3" src={$settingsStore.SiteHorizontalLogo} alt="logo" />
+				<a href="/">
+					<img class="logo p-3" src={$settingsStore.SiteHorizontalLogo} alt="logo" />
+				</a>
 			</div>
 			<div class="col-span-3 text-right">
 				<DarkMode

@@ -30,17 +30,30 @@
 	}
 </script>
 
-<header>
-	<Header />
-</header>
+<div class="page-container">
+	<header>
+		<Header />
+	</header>
 
-<main>
-	<slot />
-</main>
+	<main>
+		<slot />
+	</main>
 
-<footer>
-	<Footer />
-</footer>
+	<footer>
+		<Footer />
+	</footer>
+</div>
 
 <style>
+	/* Set height and layout for the flex container */
+	.page-container {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+
+	/* Make main content take up remaining space */
+	main {
+		flex: 1;
+	}
 </style>
