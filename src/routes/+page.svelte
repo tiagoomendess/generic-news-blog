@@ -11,11 +11,16 @@
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 	import { Accordion, AccordionItem } from 'flowbite-svelte';
-	import {  FilterSolid } from 'flowbite-svelte-icons';
+	import { FilterSolid } from 'flowbite-svelte-icons';
 	import { t } from '$lib/translations';
+	import settingsStore from '$lib/stores/settings';
+	import { type Settings } from '$lib/utils/types';
+	import { fetchSettings } from '$lib/stores/settings';
 
 	export let data: PageData;
+
 	let isMounted = false;
+	let settings : Settings;
 
 	// get filters
 	const pageQueryParam = $pageStore.url.searchParams.get('page') || '1';
@@ -32,7 +37,7 @@
 	$: handleNewPageValue(page);
 	$: handleNewCategoryValue(categoryId);
 
-	onMount(() => {
+	onMount(async () => {
 		isMounted = true;
 	});
 
@@ -82,12 +87,14 @@
 	};
 
 	const refreshResults = async () => {
+		if (!isMounted) {
+			return;
+		}
+
 		try {
 			let response = await getArticles({ page, categoryId, search: searchValue, fetch });
 			data.articles = response.articles;
 			data.pagination = response.pagination;
-
-			console.log('data: ', data);
 		} catch (error) {
 			console.error('Error calling API: ', error);
 		}
@@ -138,7 +145,7 @@
 					<div slot="header" class="flex flex-row">
 						<FilterSolid style="margin-top: 2px" />
 						<span class="ml-2">
-							{ $t('actions.filter') }
+							{$t('actions.filter')}
 						</span>
 					</div>
 					<p class="mb-2 text-gray-500 dark:text-gray-400">

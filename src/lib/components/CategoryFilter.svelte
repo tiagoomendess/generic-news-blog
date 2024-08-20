@@ -21,8 +21,8 @@
 </script>
 
 <div>
-    <p class="mb-1 mt-2 text-gray-500">{$t('categoryFilter.title')}</p>
-	<div class="divider"></div>
+    <p class="mb-1 mt-2 text-gray-500 dark:text-gray-200">{$t('categoryFilter.title')}</p>
+	<div class="divider bg-gray-500 dark:bg-gray-200"></div>
 	{#each categories as category}
 		<Button
 			on:click={() => categoryClicked(category.id)}
@@ -44,11 +44,6 @@
 </div>
 
 <style>
-	.divider {
-		border-bottom: 1px solid #e2e8f0;
-		margin-bottom: 1rem;
-	}
-
     .clear-zone {
         min-height: 23px;
     }

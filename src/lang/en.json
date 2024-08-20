@@ -5,6 +5,7 @@
     },
     "footer": {
         "copyright": "All Rights Reserved.",
+        "license": "Licensed under",
         "about": "About",
         "contact": "Contact",
         "logoAlt": "{{appName}} Logo"

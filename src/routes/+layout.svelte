@@ -10,7 +10,9 @@
 		const { pathname } = url;
 		const initLocale = getInitialLocale();
 
-		await loadTranslations(initLocale, pathname);
+		await Promise.all([
+			loadTranslations(initLocale, pathname),
+		]);
 
 		return { locale: initLocale, route: pathname };
 	};

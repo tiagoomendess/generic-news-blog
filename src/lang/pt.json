@@ -8,6 +8,7 @@
     },
     "footer": {
         "copyright": "Todos os Direitos Reservados.",
+        "license": "Licenciado sob",
         "about": "Sobre",
         "contact": "Contacto",
         "logoAlt": "{{appName}} Logo"

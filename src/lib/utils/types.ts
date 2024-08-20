@@ -52,3 +52,39 @@ export interface Category {
     id: number;
     name: string;
 }
+
+export interface ApiImage {
+    name: string;
+    caption: string;
+    width: number;
+    height: number;
+    mime: string;
+    url: string;
+    provider: string;
+}
+
+export interface SettingsApiResponse {
+    SiteName: string;
+    SiteUrl: string;
+    SiteEmail: string;
+    SiteHorizontalLogo: ApiImage;
+    SiteSquareLogo: ApiImage;
+}
+
+export interface Settings {
+    SiteName: string;
+    SiteUrl: string;
+    SiteEmail: string;
+    SiteHorizontalLogo: string;
+    SiteSquareLogo: string;
+}
+
+export interface Page {
+    id: number;
+    title: string;
+    slug: string;
+    content: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+}
