@@ -9,6 +9,7 @@
 		<FooterLinkGroup
 			ulClass="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"
 		>
+			<FooterLink href="/">{$t('footer.home')}</FooterLink>
 			<FooterLink href="/sobre">{$t('footer.about')}</FooterLink>
 			<FooterLink href="/contacto">{$t('footer.contact')}</FooterLink>
 		</FooterLinkGroup>

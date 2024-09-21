@@ -5,6 +5,7 @@
 	import type { PageLoad } from './$types';
 	import { browser } from '$app/environment';
 	import { loadTranslations } from '$lib/translations';
+	import settingsStore from '$lib/stores/settings';
 
 	export const load: PageLoad = async ({ url }) => {
 		const { pathname } = url;
@@ -29,6 +30,10 @@
 		return 'pt';
 	}
 </script>
+
+<svelte:head>
+	<link rel="icon" type="image/png" href={$settingsStore.SiteFavIcon} />
+</svelte:head>
 
 <div class="page-container">
 	<header>

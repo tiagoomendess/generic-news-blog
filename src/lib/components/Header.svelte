@@ -12,7 +12,8 @@
 			</div>
 			<div class="col-span-6 text-center flex justify-center">
 				<a href="/">
-					<img class="logo p-3" src={$settingsStore.SiteHorizontalLogo} alt="logo" />
+					<img class="logo p-3 dark:hidden" src={$settingsStore.HeaderImageForLightMode} alt="logo" />
+					<img class="logo p-3 hidden dark:block" src={$settingsStore.HeaderImageForDarkMode} alt="logo" />
 				</a>
 			</div>
 			<div class="col-span-3 text-right">

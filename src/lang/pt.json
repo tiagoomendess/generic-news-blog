@@ -17,7 +17,8 @@
         "license": "Licenciado sob",
         "about": "Sobre",
         "contact": "Contacto",
-        "logoAlt": "{{appName}} Logo"
+        "logoAlt": "{{appName}} Logo",
+        "home": "Início"
     },
     "article": {
         "publishedOn": "Publicado a {{publishDate}}"

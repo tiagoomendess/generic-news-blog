@@ -7,7 +7,7 @@ const settingsStore: Writable<Settings> = writable({} as Settings);
 const settings = await getSettings({ fetch });
 settingsStore.set(settings);
 
-export const fetchSettings = async () => {
+export const fetchSettings = async () : Promise<Writable<Settings>> => {
     const currentSettings = get(settingsStore);
     if (!currentSettings.SiteName) {
         const settings = await getSettings({ fetch });

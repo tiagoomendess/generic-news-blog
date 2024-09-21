@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { AngleLeftOutline } from 'flowbite-svelte-icons';
 	import { Button } from 'flowbite-svelte';
-	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 
 	let canGoBack = false;

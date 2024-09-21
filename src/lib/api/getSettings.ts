@@ -13,21 +13,30 @@ export async function getSettings({ fetch }: FetchSettingsParams): Promise<Setti
         const response = await fetch(requestUrl);
         const responseBody = await response.json() as ApiResponse<DataItem<SettingsApiResponse>>;
 
-        return mapSettings(responseBody.data)
+        return mapSettings(responseBody)
     } catch (error) {
         console.error(error);
     }
 
-    return {} as Settings;
+    return {
+        SiteName: 'No Site Name',
+        SiteUrl: 'http://localhost',
+        SiteEmail: 'email@example.com',
+        SiteSquareLogo: 'https://via.placeholder.com/150',
+        SiteFavIcon: 'https://via.placeholder.com/32',
+        HeaderImageForLightMode: 'https://via.placeholder.com/300x100',
+        HeaderImageForDarkMode: 'https://via.placeholder.com/300x100',
+    } as Settings;
 }
 
-const mapSettings = (settings: any): Settings => {
-    console.log("settings", settings);
+const mapSettings = (body: ApiResponse<DataItem<SettingsApiResponse>>): Settings => {
     return {
-        SiteName: settings.attributes.SiteName,
-        SiteUrl: settings.attributes.SiteUrl,
-        SiteEmail: settings.attributes.SiteEmail,
-        SiteHorizontalLogo: settings.attributes.SiteHorizontalLogo.data.attributes.url,
-        SiteSquareLogo: settings.attributes.SiteSquareLogo.data.attributes.url,
+        SiteName: body.data.attributes.SiteName || 'No Site Name',
+        SiteUrl: body.data.attributes.SiteUrl || 'http://localhost',
+        SiteEmail: body.data.attributes.SiteEmail || 'email@example.com',
+        SiteSquareLogo: body.data.attributes.SiteSquareLogo?.data.attributes.url || 'https://via.placeholder.com/150',
+        SiteFavIcon: body.data.attributes.SiteFavIcon?.data.attributes.url || 'https://via.placeholder.com/32',
+        HeaderImageForLightMode: body.data.attributes.HeaderImageForLightMode?.data.attributes.url || 'https://via.placeholder.com/300x100',
+        HeaderImageForDarkMode: body.data.attributes.HeaderImageForDarkMode?.data.attributes.url || 'https://via.placeholder.com/300x100',
     } as Settings;
 }
