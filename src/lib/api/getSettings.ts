@@ -19,8 +19,8 @@ export async function getSettings({ fetch }: FetchSettingsParams): Promise<Setti
     }
 
     return {
-        SiteName: 'No Site Name',
-        SiteUrl: 'http://localhost',
+        SiteName: config.appName || 'No Site Name',
+        SiteUrl: config.appUrl || 'http://localhost',
         SiteEmail: 'email@example.com',
         SiteSquareLogo: 'https://via.placeholder.com/150',
         SiteFavIcon: 'https://via.placeholder.com/32',

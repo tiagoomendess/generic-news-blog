@@ -1,20 +1,38 @@
 {
-    "greeting": "Helo",
+    "greeting": "Olá",
+    "actions": {
+        "clear": "Limpar",
+        "filter": "Filtrar",
+        "readSimilarArticles": "Outros Artigos Similares",
+        "goToStart": "Ir para o Início"
+    },
+    "general": {
+        "pageNotFound": "Página não encontrada",
+        "pageNotFoundDescription": "A página que está a tentar aceder não existe. Por favor, volte ao inicio onde poderá pesquisar pela página que procura."
+    },
     "header": {
-        
     },
     "footer": {
-        "copyright": "All Rights Reserved.",
-        "license": "Licensed under",
-        "about": "About",
-        "contact": "Contact",
-        "logoAlt": "{{appName}} Logo"
+        "copyright": "Todos os Direitos Reservados.",
+        "license": "Licenciado sob",
+        "about": "Sobre",
+        "contact": "Contacto",
+        "logoAlt": "{{appName}} Logo",
+        "home": "Início"
     },
     "article": {
-        "publishedOn": "Published at {{publishDate}}"
+        "publishedOn": "Publicado a {{publishDate}}"
     },
     "pagination": {
-        "previous": "Previous",
-        "next": "Next"
+        "previous": "Anterior",
+        "next": "Seguinte"
+    },
+    "search": {
+        "title": "Procure por um Artigo",
+        "placeholder": "Escreva algo..."
+
+    },
+    "categoryFilter": {
+        "title": "Filtrar por Categoria"
     }
 }

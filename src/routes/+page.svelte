@@ -15,7 +15,6 @@
 	import { t } from '$lib/translations';
 	import settingsStore from '$lib/stores/settings';
 	import { type Settings } from '$lib/utils/types';
-	import { fetchSettings } from '$lib/stores/settings';
 	import { config } from '$lib/config';
 
 	export let data: PageData;
