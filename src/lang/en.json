@@ -8,7 +8,8 @@
     },
     "general": {
         "pageNotFound": "Página não encontrada",
-        "pageNotFoundDescription": "A página que está a tentar aceder não existe. Por favor, volte ao inicio onde poderá pesquisar pela página que procura."
+        "pageNotFoundDescription": "A página que está a tentar aceder não existe. Por favor, volte ao inicio onde poderá pesquisar pela página que procura.",
+        "articlesNotFound": "Não foram encontrados artigos com os filtros selecionados."
     },
     "header": {
     },

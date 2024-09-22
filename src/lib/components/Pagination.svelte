@@ -24,6 +24,7 @@
 	};
 </script>
 
+{#if pagination && pagination.pageCount > 1}
 <div>
 	<div class="text-sm text-gray-700 dark:text-gray-400 mb-2 text-center">
 		Página
@@ -51,3 +52,4 @@
 		</div>
 	{/if}
 </div>
+{/if}

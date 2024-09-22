@@ -20,7 +20,6 @@
 	export let data: PageData;
 
 	let isMounted = false;
-	let settings : Settings;
 
 	// get filters
 	const pageQueryParam = $pageStore.url.searchParams.get('page') || '1';
@@ -163,6 +162,11 @@
 			</Accordion>
 		</div>
 		<div class="col-span-3 md:col-span-2">
+			{#if data.articles.length === 0}
+				<p class="text-lg text-gray-500 dark:text-gray-400 text-center">
+					{$t('general.articlesNotFound')}
+				</p>
+			{/if}
 			<BlogFeed articles={data.articles} />
 			<Pagination pagination={data.pagination} bind:currentPage={page} />
 		</div>
