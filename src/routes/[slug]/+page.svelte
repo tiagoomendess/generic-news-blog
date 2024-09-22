@@ -22,7 +22,7 @@
 			</Heading>
 
 			<div class="text-center">
-				<p class="mb-2">
+				<p class="mb-2 dark:text-gray-100">
 					{$t('general.pageNotFoundDescription')}
 				</p>
 			</div>

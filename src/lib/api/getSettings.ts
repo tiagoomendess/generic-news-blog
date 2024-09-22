@@ -16,17 +16,8 @@ export async function getSettings({ fetch }: FetchSettingsParams): Promise<Setti
         return mapSettings(responseBody)
     } catch (error) {
         console.error(error);
+        throw error;
     }
-
-    return {
-        SiteName: config.appName || 'No Site Name',
-        SiteUrl: config.appUrl || 'http://localhost',
-        SiteEmail: 'email@example.com',
-        SiteSquareLogo: 'https://via.placeholder.com/150',
-        SiteFavIcon: 'https://via.placeholder.com/32',
-        HeaderImageForLightMode: 'https://via.placeholder.com/300x100',
-        HeaderImageForDarkMode: 'https://via.placeholder.com/300x100',
-    } as Settings;
 }
 
 const mapSettings = (body: ApiResponse<DataItem<SettingsApiResponse>>): Settings => {
