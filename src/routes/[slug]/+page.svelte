@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Img, Heading, Button } from 'flowbite-svelte';
+	import { Heading, Button } from 'flowbite-svelte';
 	import type { PageData } from './$types';
 	import PageContent from '$lib/components/PageContent.svelte';
 	import { t } from '$lib/translations';
@@ -46,7 +46,7 @@
 		>
 			{data.page.title}
 		</Heading>
-		<section class="font-normal text-lg dark:text-gray-100">
+		<section class="font-normal text-lg dark:text-gray-100 standard-links">
 			{@html data.page.content}
 		</section>
 	{/if}

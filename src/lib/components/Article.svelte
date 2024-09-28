@@ -28,7 +28,7 @@
     </title>
 </svelte:head>
 
-<article class="">
+<article>
     <section>
         <div class="category mb-2 font-semibold text-gray-500 text-md dark:text-gray-400">
             <a href="/?category={article.category.id}">{article.category.name}</a>
@@ -36,10 +36,10 @@
         <Heading tag="h1" class="mb-2 text-gray-700 tracking-tight title-header font-black text-4xl">{article.title}</Heading>
         <time class="text-gray-500 text-sm dark:text-gray-400" datetime="{publishISODate}">{$t('article.publishedOn', {publishDate: publishDate})}</time>
         <Img class="my-5 rounded-lg aspect-video w-full" src={article.picture.formats.large.url}/>
-        <p class="description mb-8 text-gray-950 font-bold text-xl dark:text-white">{article.metaDescription}</p>
+        <p class="description mb-8 text-gray-950 font-bold text-xl dark:text-white standard-links">{article.metaDescription}</p>
     </section>
     
-    <section class="font-normal text-lg dark:text-gray-100">
+    <section class="font-normal text-lg dark:text-gray-100 standard-links">
         {@html article.body}
     </section>
 </article>
