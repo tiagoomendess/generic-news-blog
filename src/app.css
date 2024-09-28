@@ -38,7 +38,8 @@ ul {
     margin-bottom: 12px;
 }
 
-.standard-links {
+.rendered-html {
+
     /* Base styles for all <a> tags */
     a {
         text-decoration: underline;
@@ -81,4 +82,35 @@ ul {
         /* Customize as needed */
     }
 
+    /* Make h2 bigger and bolder */
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 20px 0 10px 0;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin: 18px 0 8px 0;
+    }
+
+    ul {
+        list-style-type: disc;
+        /* This ensures that unordered lists have bullet points */
+        margin-left: 20px;
+        /* Adds some indentation for the list */
+    }
+
+    ol {
+        list-style-type: decimal;
+        /* Ensures ordered lists have numbers */
+        margin-left: 20px;
+        /* Adds indentation for ordered lists */
+    }
+
+    li {
+        margin-bottom: 8px;
+        /* Optional: Adds spacing between list items */
+    }
 }

@@ -46,7 +46,7 @@
 		>
 			{data.page.title}
 		</Heading>
-		<section class="font-normal text-lg dark:text-gray-100 standard-links">
+		<section class="font-normal text-lg dark:text-gray-100 rendered-html">
 			{@html data.page.content}
 		</section>
 	{/if}
