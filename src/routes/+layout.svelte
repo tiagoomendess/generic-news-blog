@@ -83,7 +83,7 @@
 
 	/* Default shadow style when user has scrolled */
 	.shadow {
-		box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.17);
 	}
 
 	/* Set height and layout for the flex container */
