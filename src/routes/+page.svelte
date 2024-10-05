@@ -171,7 +171,7 @@
 			<Pagination pagination={data.pagination} bind:currentPage={page} />
 		</div>
 		<div class="hidden md:block md:col-span-1">
-			<div class="sticky top-10">
+			<div class="sticky side-panel">
 				<SearchBar bind:value={searchValue} />
 				<CategoryFilter
 					categories={data.categories.map((cat) => ({ id: cat.id, name: cat.attributes.name }))}
@@ -181,3 +181,9 @@
 		</div>
 	</div>
 </PageContent>
+
+<style>
+	.side-panel {
+		top: 7.1rem;
+	}
+</style>

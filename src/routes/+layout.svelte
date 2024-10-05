@@ -6,6 +6,7 @@
 	import { browser } from '$app/environment';
 	import { loadTranslations } from '$lib/translations';
 	import settingsStore from '$lib/stores/settings';
+	import { onMount, onDestroy } from 'svelte';
 
 	export const load: PageLoad = async ({ url }) => {
 		const { pathname } = url;
@@ -29,6 +30,28 @@
 
 		return 'pt';
 	}
+
+	let hasScrolled = false; // Reactive variable to track scroll status
+
+	// Function to handle scroll event
+	function handleScroll() {
+		// Check if the user has scrolled down
+		hasScrolled = window.scrollY > 0;
+	}
+
+	// Add scroll event listener on mount
+	onMount(() => {
+		if (browser) {
+			window.addEventListener('scroll', handleScroll);
+		}
+
+		return () => {
+			// Cleanup event listener on component destroy
+			if (browser) {
+				window.removeEventListener('scroll', handleScroll);
+			}
+		};
+	});
 </script>
 
 <svelte:head>
@@ -36,7 +59,7 @@
 </svelte:head>
 
 <div class="page-container">
-	<header>
+	<header class="navbar-custom bg-white dark:bg-gray-800 {hasScrolled ? 'shadow' : ''}">
 		<Header />
 	</header>
 
@@ -50,6 +73,19 @@
 </div>
 
 <style>
+	.navbar-custom {
+		position: sticky;
+		top: 0;
+		z-index: 20;
+		width: 100%;
+		transition: box-shadow 0.1s ease-in-out; /* Smooth transition for shadow */
+	}
+
+	/* Default shadow style when user has scrolled */
+	.shadow {
+		box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+	}
+
 	/* Set height and layout for the flex container */
 	.page-container {
 		display: flex;
