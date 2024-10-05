@@ -6,12 +6,48 @@
 	import moment from 'moment';
 	import { t } from '../translations';
 	import { config } from '$lib/config';
+	import settingsStore from '$lib/stores/settings';
 
 	export let article: Article;
 
 	let publishDate = '';
 	let publishISODate = '';
 	let updatedAt = '';
+
+	// Define your Schema.org JSON-LD object
+	const schema = {
+		'@context': 'https://schema.org',
+		'@type': 'Article',
+		headline: article.title,
+		description: article.metaDescription,
+		image: article.picture.url,
+		author: {
+			'@type': 'Organization',
+			name: config.appName,
+			url: config.appUrl,
+			logo: {
+				'@type': 'ImageObject',
+				url: $settingsStore.SiteSquareLogo
+			}
+		},
+		publisher: {
+			'@type': 'Organization',
+			name: config.appName,
+			logo: {
+				'@type': 'ImageObject',
+				url: $settingsStore.SiteSquareLogo
+			}
+		},
+		datePublished: article.publishedAt,
+		dateModified: article.updatedAt,
+		mainEntityOfPage: {
+			'@type': 'WebPage',
+			'@id': config.appUrl + '/artigos/' + article.slug
+		}
+	};
+
+	// Convert the schema object to a JSON-LD string
+	const jsonLd = JSON.stringify(schema);
 
 	onMount(() => {
 		let datePublished = new Date(article.publishedAt);
@@ -33,18 +69,41 @@
 	<meta property="og:description" content={article.metaDescription} />
 	<meta property="og:url" content={`${config.appUrl}/artigos/${article.slug}`} />
 	<meta property="og:type" content="article" />
-	<meta property="og:image" content={article.picture.formats.large.url} />
-
-	<!-- Optional: Include a larger image variant for better resolution on high-DPI screens -->
-	<meta property="og:image:width" content={article.picture.formats.large.width} />
-	<meta property="og:image:height" content={article.picture.formats.large.height} />
-    <meta property="og:image:alt" content={article.title} />
+	<meta property="og:image" content={article.picture.url} />
+	<meta property="og:image:width" content={article.picture.width} />
+	<meta property="og:image:height" content={article.picture.height} />
+	<meta property="og:image:alt" content={article.picture.caption || article.title} />
 
 	<!-- Article-specific Open Graph metadata -->
 	<meta property="article:published_time" content={article.publishedAt} />
 	<meta property="article:modified_time" content={article.updatedAt} />
 	<meta property="article:author" content={config.appUrl + '/sobre'} />
 	<meta property="article:section" content={article.category.id} />
+
+	<meta property="og:locale" content="pt_PT" />
+	<meta property="og:site_name" content={config.appName} />
+
+	<link rel="canonical" href={`${config.appUrl}/artigos/${article.slug}`} />
+	<meta name="description" content={article.metaDescription} />
+
+	<!-- Dublin Core Metadata (For More Semantic Web Compatibility) -->
+	<meta name="DC.title" content={article.title} />
+	<meta name="DC.description" content={article.metaDescription} />
+	<meta name="DC.date" content={article.publishedAt} />
+	<meta name="DC.creator" content={config.appName} />
+	<meta name="DC.language" content="pt" />
+
+	<meta name="robots" content="index, follow" />
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={article.title} />
+	<meta name="twitter:description" content={article.metaDescription} />
+	<meta name="twitter:image" content={article.picture.url} />
+	<meta name="twitter:image:alt" content={article.picture.caption || article.title} />
+
+	<!-- Schema.org markup for Google -->
+	{@html `<script type="application/ld+json">${jsonLd}</script>`}
 </svelte:head>
 
 <article>
@@ -58,7 +117,11 @@
 		<time class="text-gray-500 text-sm dark:text-gray-400" datetime={publishISODate}
 			>{$t('article.publishedOn', { publishDate: publishDate })}</time
 		>
-		<Img class="my-5 rounded-lg aspect-video w-full" src={article.picture.formats.large.url} />
+		<Img
+			class="my-5 rounded-lg aspect-video w-full"
+			src={article.picture.url}
+			alt={article.picture.caption || article.title}
+		/>
 		<p class="description mb-8 text-gray-950 font-bold text-xl dark:text-white rendered-html">
 			{article.metaDescription}
 		</p>
